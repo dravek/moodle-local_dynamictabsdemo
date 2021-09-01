@@ -37,14 +37,13 @@ class tab2 extends base {
      * Export this for use in a mustache template context.
      *
      * @param renderer_base $output
-     *
-     * @return array|stdClass
+     * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
         $content = (object)[];
         // Define any content you might want to pass to the dynamic tab.
         $content->currenttime = userdate(time(), get_string('strftimedatetimeaccurate'));
-        $content->tabheading = $this->get_tab_label();
+
         return $content;
     }
 
