@@ -40,14 +40,13 @@ class tab1 extends base {
      * Export this for use in a mustache template context.
      *
      * @param renderer_base $output
-     *
-     * @return array|stdClass
+     * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
         $content = (object)[];
         $report = system_report_factory::create(config_changes::class, context_system::instance());
         $content->content = $report->output();
-        $content->tabheading = $this->get_tab_label();
+
         return $content;
     }
 
